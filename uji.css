@@ -1,0 +1,303 @@
+/* By Siti Alifia Machmud */
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: comic sans ms; 
+}
+body {
+	background-color: none;
+}
+nav {
+	padding: 5px 20px;
+	background-color: maroon;
+	text-align: center;
+	align-items: center;
+	display: flex;
+}
+nav a {
+	color: white;
+}
+nav a:hover {
+	color: darkgreen;
+}
+.logo {
+	flex: 1;
+	
+}
+.logo h1 {
+	color: white;
+	font-family: "Love Light", cursive;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 70px;
+}
+.logo a{
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	text-decoration: none;
+}
+.logo {
+	color: white;
+}
+.menu {
+	display: flex;
+	align-items: center;
+	list-style: none;
+}
+.menu li {
+	padding: 15px 10px;
+	font-size: 16px;
+	display: inline-block;
+	position: relative;
+}
+
+@media screen and (max-width: 600px) {
+	nav { 
+	display:block;
+	position:relative;
+	padding: 15px 20px }
+	.menu { 
+	 margin-top: 15px;
+	 display: none;
+	}
+
+	a:hover, a:active {
+		background: none;
+		color: white;
+	}
+
+}
+a.active, a:hover{
+	background: mediumvioletred;
+	transition: 0.5s;
+}
+
+.menu li p{
+	color: white;
+	font-size: 16px;
+}
+.menu li a {
+	display: inline-block;
+	padding: 20px 25px;
+	font-size: 16px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+}
+.menu li ul.dropdown li {
+	display: block;
+	background: none;
+	margin: 2px 0px;
+}
+.menu li ul.dropdown {
+	width: auto;
+	background: pink;
+	position: absolute;
+	z-index: 999;
+	display:none;
+}
+.menu li a:hover {
+	background: grey;
+}
+.menu li:hover ul.dropdown {
+	display: inline-block;
+}
+.menu li a:active {
+	background: darkgreen;
+	display: block;
+}
+.search {
+	width: max-content;
+	display: flex;
+	align-items: center;
+	justify-content: center !important;
+	padding: 14px;
+	border-radius: 28px;
+	background: #f6f6f6;
+}
+.search-input {
+	font-size: 16px;
+	font-family: georgia;
+	color: #333333;
+	margin-left: 14px;
+}
+.calendar {
+	margin: auto;
+	width: 380px;
+	background: white;
+	padding:1rem;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.calendar header {
+	display: flex;
+	align-items: left;
+	justify-content: space-between;
+}
+.calendar ul {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;	
+}
+.calendar ul li {
+	width: calc(100% / 7);
+	margin-top: 25px;
+	position: relative;
+	z-index: 2;
+}
+#prev, #next {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 50%;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+#prev::before, #next::before {
+	content: '';
+	width: 50%;
+	height: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-style: solid;
+	border-width: 0.25em 0.25em 0 0;
+	border-color: #ececec;
+}
+#next::before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+#prev::before {
+	transform: translate(-50%, -50%) rotate(-135deg);
+}
+#prev:hover::before, 
+#next:hover::before {
+	border-color: black;
+}
+.days {
+	font-weight: 600;
+}
+.dates li.today {
+	color: white;
+
+}
+footer {
+		position: fixed;
+		bottom: 0;
+		background-color: maroon;
+		color: white;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 50px 50px 60px 50px;
+		margin-top: 55px;
+		border: none;
+	}
+@media (max-height: 700px) {
+	footer {
+	position: static;
+}
+.footer-place {
+	font-size: 15px;
+	margin: 10px 15px;
+	justify-content: right;
+}
+.card-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 25px;
+	margin-top: 60px;
+}
+.card {
+	width: 225px; /* atur lebar kartunya di sini */
+	height: 350px;
+	background-color: grey;
+	bordder: 3px; solid #ddd;
+	border-radius: 10px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0,3);
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+	transform: translateY(-20px);
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
+}
+.card img{
+	width: 100%;
+	height: auto; /*bisa diatur persenan gambarnya */
+	object-fit: cover;
+}
+.card-content{ /* buat read more nya */
+	padding: 5px;
+	text-align: center;
+	padding-bottom: 30px;
+}
+.card-content h1 {
+	font-size: 20px;
+	font-family: comic sans ms;
+	margin-bottom: 10px;
+	text-align: center;
+	color: black;
+} /* tergantung fotonya, kalo landscape bakal ngepas di box, gitu kira2 */
+.card-button {
+	display: inline-block;
+	background-color: white;
+	color: black;
+	text-decoration: none;
+	border-radius: 5px;
+	padding: 7px 10px;
+	font-size: small;
+	align-items: center;
+	margin-top: 30px;
+}
+.card {
+	outline: 5px double black;
+	outline-style: dotted;
+}
+.border-lit{
+	font-size: 25px;
+	color: black;
+	text-align: justify;
+	justify-content: left;
+	background-color: cyan;
+	border-radius: 10px;
+	outline-style: double;
+	padding: 50px;
+	margin: 20px;
+}
+aside {
+  width: 400px;
+  height: 450px;
+  padding: 23px;
+  margin: 15px;
+  float: left;
+  background-color: deeppink;
+  border-radius: 10px;
+}
+.jam {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
+}
+.look {
+	border:1px solid #606060;
+	color:white;
+	padding: 40px;
+	border-radius: 10px;
+	background-color:#313131;
+}
+#Date {
+	font-size: 20px !important;
+	text-align: center;
+}
+.look ul {
+	list-style: none;
+	display: flex;
+	font-size: 65px;
+	gap: 15px;
+}
